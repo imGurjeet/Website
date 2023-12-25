@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please Wait..</title>
+    <style>
+        body
+        {
+            user-select: none;
+            background-color: rgb(0, 0, 0);
+        }
+        .btnbox
+        {
+            font-family: monospace;
+            font-weight: 600;
+            color: rgb(143, 143, 143);
+            background-color:  rgba(0, 0, 0, 0.250) ;
+            height: 20px;
+            width: 280px;
+            text-align: center;
+            border: solid 1px rgb(45, 38, 38);
+            border-radius: 4px;
+        }
+        #btn
+        {
+            visibility: hidden;
+        }
+        .line
+        {
+            margin: -10px auto;
+            background-color: red;
+            height: 2px;
+            width: 80%;
+            box-shadow: 0px 0px 5px rgb(255, 0, 0), 0px 0px 5px rgb(255, 0, 0);
+        }
+        center
+        {
+            margin-top: -5px;
+        }
+        #text
+        {
+           opacity: 0;
+        }
+        .loading
+        {
+            margin: 100px auto;
+            height: 100px;
+            width: 100px;
+            border: 2px solid red;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-radius: 100%;
+            animation: load .6s infinite ;
+            animation-timing-function:linear;
+        }
+        @keyframes load
+        {
+            0%
+            {
+
+            }
+            100%
+            {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="btnbox" id="btnbg" onclick="btnon()" onclick="btnoff()">
+        <label for="btn" class="btn">
+            
+        <input type="checkbox" id="btn">
+            <div class="line" id="line"></div>
+            <center id="text">Off</center>
+        </label>
+    </div>
+    <div class="loading"></div>
+    <script>
+        var btn = document.getElementById("btn")
+        function btnon()
+        {
+            if(btn.checked)
+            {
+                document.getElementById("line").style.backgroundColor="lime";
+                document.getElementById("line").style.boxShadow= "0px 0px 5px rgb(0, 255, 0), 0px 0px 5px rgb(0, 255, 0)";
+
+                document.getElementById("text").innerText="On"       
+            }
+            else
+            {
+                document.getElementById("line").style.backgroundColor="red";
+                document.getElementById("line").style.boxShadow= "0px 0px 5px rgb(255, 0, 0), 0px 0px 5px rgb(255, 0, 0)";
+;
+                document.getElementById("text").innerText="Off" 
+            }
+        }         
+    </script>
+</body>
+</html>
